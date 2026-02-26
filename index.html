@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Tano - Empanadas Artesanales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="config_pago.js"></script>
+</head>
+<body class="light-theme">
+    <!-- Header -->
+    <header>
+        <a href="#inicio" class="logo">
+            <img src="Empanadas Congeladas.png" alt="El Tano - Empanadas">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark</span>
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1> <span>No sabés qué comer</span> 
+                pero sabés que querés algo rico.</h1>  
+                 
+            <p>En El Tano te lo hacemos fácil: empanadas congeladas con sabor casero, listas para compartir en cualquier momento.</p>
+            <div class="hero-buttons">
+                <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
+                <a href="#nosotros" class="btn-secondary">Conócenos</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-empanada">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="catalogo">
+        <h2 class="section-title">Nuestro Catálogo</h2>
+        <p class="section-subtitle">Explora todas nuestras variedades de empanadas</p>
+        
+        <div class="category-filters">
+            <button class="category-btn active" data-category="todas">
+                <i class="fas fa-th-large"></i> Todas
+            </button>
+            <button class="category-btn" data-category="carne">
+                <i class="fas fa-drumstick-bite"></i> Carne
+            </button>
+            <button class="category-btn" data-category="pollo">
+                <i class="fas fa-egg"></i> Pollo
+            </button>
+            <button class="category-btn" data-category="verduras">
+                <i class="fas fa-carrot"></i> Verduras
+            </button>
+            <button class="category-btn" data-category="queso">
+                <i class="fas fa-cheese"></i> Queso
+            </button>
+            <button class="category-btn" data-category="jamon">
+                <i class="fas fa-bacon"></i> Jamón
+            </button>
+            <button class="category-btn" data-category="integral">
+                <i class="fas fa-leaf"></i> Integrales
+            </button>
+            <button class="category-btn" data-category="vegano">
+                <i class="fas fa-seedling"></i> Vegan
+            </button>
+            <button class="category-btn" data-category="sin_gluten">
+                <i class="fas fa-ban"></i> Sin Gluten
+            </button>
+            <button class="category-btn" data-category="premium">
+                <i class="fas fa-crown"></i> Premium
+            </button>
+            <button class="category-btn" data-category="dulce">
+                <i class="fas fa-birthday-cake"></i> Dulces
+            </button>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products-section">
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be inserted by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="nosotros">
+        <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+        <p class="section-subtitle">Calidad y sabor en cada bocado</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Ingredientes Frescos</h3>
+                <p>Utilizamos solo ingredientes frescos y de la mejor calidad para garantizar el sabor auténtico.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-hands"></i>
+                </div>
+                <h3>Artesanales</h3>
+                <p>Cada empanada es elaborada a mano con recetas tradicionales transmitidas por generaciones.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Entrega Rápida</h3>
+                <p>Recibe tus empanadas frescas y calientes en la puerta de tu casa en tiempo récord.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Hechas con Amor</h3>
+                <p>Ponemos el mismo cuidado y dedicación en cada empanada como si fuera para nuestra familia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>El Tano</h4>
+                <p>Las mejores empanadas artesanales de la ciudad. Tradición y sabor en cada bocado.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                otros">Nosotros<a href="#nos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h4>Horarios</h4>
+                <p>Lunes a Domingo</p>
+                <p>10:00 - 22:00 hrs</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-phone"></i> +598 91 234 567</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ciudad de la Costa, Uruguay</p>
+                <p><i class="fas fa-envelope"></i> hola@eltano.com.uy</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 El Tano - Empanadas Artesanales. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p style="text-align: center; opacity: 0.7;">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">$0</span>
+        </div>
+        
+        <!-- Formulario de datos del cliente -->
+        <div id="customerForm" class="customer-form" style="display: none;">
+            <h4>Datos para el envío</h4>
+            <input type="text" id="customerName" placeholder="Tu nombre completo" required>
+            <input type="email" id="customerEmail" placeholder="Tu email" required>
+            <input type="tel" id="customerPhone" placeholder="Tu teléfono (opcional)">
+            <input type="text" id="customerAddress" placeholder="Dirección de entrega (opcional)">
+        </div>
+        
+        <button class="checkout-btn" id="checkoutBtn">Finalizar Pedido</button>
+    </div>
+
+    <script>
+        // Products Data
+        const products = [
+            // EMPANADAS DE CARNE
+            {
+                id: 1,
+                name: "Carne Suave",
+                category: "carne",
+                description: "Carne, huevo, cebolla y morrón.",
+                price: 420,
+                icon: "fa-drumstick-bite"
+            },
+            {
+                id: 2,
+                name: "Mendocina",
+                category: "carne",
+                description: "Carne, aceitunas, cebolla y morrón.",
+                price: 420,
+                icon: "fa-drumstick-bite"
+            },
+            {
+                id: 3,
+                name: "Picante",
+                category: "carne",
+                description: "Carne, aceitunas, huevo, cebolla, morrón, tabasco y especias.",
+                price: 420,
+                icon: "fa-fire"
+            },
+            {
+                id: 4,
+                name: "Americana",
+                category: "carne",
+                description: "Carne, cebolla, morrón, panceta y muzzarella.",
+                price: 420,
+                icon: "fa-drumstick-bite"
+            },
+            {
+                id: 6,
+                name: "Burger Empanada",
+                category: "carne",
+                description: "Carne, cebolla, tomate, ketchup, panceta, cheddar y huevo.",
+                price: 420,
+                icon: "fa-hamburger"
+            },
+            // EMPANADAS DE QUESO
+            {
+                id: 18,
+                name: "Cebolla y Queso",
+                category: "queso",
+                description: "Cebolla rehogada y condimentada, con mix de quesos.",
+                price: 420,
+                icon: "fa-cheese"
+            },
+            {
+                id: 19,
+                name: "Calabresa",
+                category: "queso",
+                description: "Variedad de quesos, morrón y longaniza.",
+                price: 420,
+                icon: "fa-cheese"
+            },
+            {
+                id: 20,
+                name: "Cuatro Quesos",
+                category: "queso",
+                description: "Muzzarella, dambo, crema de roquefort y parmesano.",
+                price: 420,
+                icon: "fa-cheese"
+            },
+            {
+                id: 21,
+                name: "Queso y Aceitunas",
+                category: "queso",
+                description: "Olivas en rodajas con mix de quesos.",
+                price: 420,
+                icon: "fa-cheese"
+            },
+            {
+                id: 22,
+                name: "Mafalda de Queso",
+                category: "queso",
+                description: "Mix de quesos, cebolla rehogada y crocante de panceta.",
+                price: 420,
+                icon: "fa-cheese"
+            },
+            {
+                id: 23,
+                name: "Libanesa",
+                category: "queso",
+                description: "Mix de quesos, cebolla, ajo en oliva y perejil.",
+                price: 420,
+                icon: "fa-cheese"
+            },
+            {
+                id: 25,
+                name: "Empanada de Provolone",
+                category: "queso",
+                description: "Provolone, muzzarella, cebolla caramelizada y orégano.",
+                price: 420,
+                icon: "fa-cheese"
+            },
+            // EMPANADAS DE JAMÓN
+            {
+                id: 16,
+                name: "Jamón y Queso",
+                category: "jamon",
+                description: "Mix de quesos con jamón feteado y picado.",
+                price: 420,
+                icon: "fa-bacon"
+            },
+            {
+                id: 17,
+                name: "Jamón y Queso con Cheddar",
+                category: "jamon",
+                description: "El mix de quesos contiene cheddar y salsa pizzera.",
+                price: 420,
+                icon: "fa-bacon"
+            },
+            {
+                id: 33,
+                name: "Jamón y Choclo",
+                category: "jamon",
+                description: "Maíz dulce y jamón, ligados con salsa blanca y muzzarella.",
+                price: 420,
+                icon: "fa-bacon"
+            },
+            // EMPANADAS DE POLLO
+            {
+                id: 10,
+                name: "Pollo al Curry",
+                category: "pollo",
+                description: "Pollo, salsa curry y champignon.",
+                price: 420,
+                icon: "fa-egg"
+            },
+            {
+                id: 11,
+                name: "Pollo con Vegetales",
+                category: "pollo",
+                description: "Pollo grille, con vegetales de estación y muzzarella.",
+                price: 420,
+                icon: "fa-egg"
+            },
+            {
+                id: 12,
+                name: "Pollo a la Mostaza",
+                category: "pollo",
+                description: "Pollo, salsa de mostaza antigua, cebolla y verdeo.",
+                price: 420,
+                icon: "fa-egg"
+            },
+            {
+                id: 15,
+                name: "Pollo con Puerros y Panceta",
+                category: "pollo",
+                description: "Pollo, muzzarella, puerros, crocante de panceta y cebolla frita.",
+                price: 420,
+                icon: "fa-egg"
+            },
+            // EMPANADAS INTEGRALES
+            {
+                id: 43,
+                name: "Integral de Vegetales Asados",
+                category: "integral",
+                description: "Vegetales de estación asados, ricota y muzzarella.",
+                price: 450,
+                icon: "fa-leaf"
+            },
+            {
+                id: 44,
+                name: "Integral Caprese",
+                category: "integral",
+                description: "Mix de quesos, tomate y albahaca frescos.",
+                price: 450,
+                icon: "fa-leaf"
+            },
+            // EMPANADAS VEGANAS
+            {
+                id: 8,
+                name: "Lentejas",
+                category: "vegano",
+                description: "Lentejas al curry, con espinaca y vegetales rehogados.",
+                price: 420,
+                icon: "fa-seedling"
+            },
+            {
+                id: 9,
+                name: "Soja Parrillera",
+                category: "vegano",
+                description: "Soja macerada en salsa de soja, con mix de vegetales.",
+                price: 420,
+                icon: "fa-seedling"
+            },
+            // EMPANADAS VEGETARIANAS
+            {
+                id: 31,
+                name: "Espinaca",
+                category: "verduras",
+                description: "Espinaca, cebolla, morrón, con un mix de salsa blanca y quesos.",
+                price: 420,
+                icon: "fa-carrot"
+            },
+            {
+                id: 32,
+                name: "Humita",
+                category: "verduras",
+                description: "Maíz dulce, morrón, cebolla, salsa blanca y muzzarella.",
+                price: 420,
+                icon: "fa-carrot"
+            },
+            {
+                id: 34,
+                name: "Vegetales Asados",
+                category: "verduras",
+                description: "Vegetales de estación asados, ricotta y muzzarella.",
+                price: 420,
+                icon: "fa-carrot"
+            },
+            // EMPANADAS PARA CELÍACOS
+            {
+                id: 100,
+                name: "Celíacos - Carne",
+                category: "sin_gluten",
+                description: "SIN GLUTEN. Pack 2 empanadas de carne. Horneadas y congeladas.",
+                price: 500,
+                icon: "fa-ban"
+            },
+            {
+                id: 101,
+                name: "Celíacos - Jamón y Queso",
+                category: "sin_gluten",
+                description: "SIN GLUTEN. Pack 2 empanadas. Horneadas y congeladas.",
+                price: 500,
+                icon: "fa-ban"
+            },
+            // EMPANADAS PREMIUM
+            {
+                id: 7,
+                name: "Empanada de Chivito",
+                category: "premium",
+                description: "Carne al cuchillo, muzza, mayo, huevo, panceta, cebolla, aceitunas y morrón.",
+                price: 500,
+                icon: "fa-star"
+            },
+            {
+                id: 24,
+                name: "Roquefort",
+                category: "premium",
+                description: "Queso roquefort, muzzarella, apio y nuez.",
+                price: 500,
+                icon: "fa-star"
+            },
+            {
+                id: 26,
+                name: "Caprese",
+                category: "premium",
+                description: "Mix de quesos, tomate y albahaca frescos.",
+                price: 500,
+                icon: "fa-star"
+            },
+            {
+                id: 35,
+                name: "Atún",
+                category: "premium",
+                description: "Atún, cebolla, huevo, aceitunas y salsa.",
+                price: 500,
+                icon: "fa-fish"
+            },
+            // EMPANADAS DULCES
+            {
+                id: 39,
+                name: "Dulce de Leche",
+                category: "dulce",
+                description: "Dulce de leche con betas de chocolate amargo.",
+                price: 400,
+                icon: "fa-birthday-cake"
+            },
+            {
+                id: 40,
+                name: "Martin Fierro",
+                category: "dulce",
+                description: "Queso dambo y dulce de membrillo.",
+                price: 400,
+                icon: "fa-birthday-cake"
+            },
+            {
+                id: 41,
+                name: "Manzana con Pasas",
+                category: "dulce",
+                description: "Manzana con pasas de uva y canela.",
+                price: 400,
+                icon: "fa-birthday-cake"
+            }
+        ];
+
+        // Cart
+        let cart = [];
+
+        // DOM Elements
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const productsGrid = document.getElementById('productsGrid');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const cartBtn = document.getElementById('cartBtn');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartClose = document.getElementById('cartClose');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        // Theme Toggle
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i><span>Light</span>';
+            } else {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i><span>Dark</span>';
+            }
+        });
+
+        // Render Products
+        function renderProducts(category = 'todas') {
+            const filteredProducts = category === 'todas' 
+                ? products 
+                : products.filter(p => p.category === category);
+            
+            productsGrid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card" data-category="${product.category}">
+                    <div class="product-image ${product.category}">
+                        <img src="empanadas.jpg" alt="${product.name}">
+                        ${product.category === 'premium' ? '<span class="product-badge premium">Premium</span>' : ''}
+                        ${product.category === 'sin_gluten' ? '<span class="product-badge sin-gluten">Sin TACC</span>' : ''}
+                        ${product.category === 'integral' ? '<span class="product-badge integral">Integral</span>' : ''}
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-footer">
+                            <div class="product-price">${product.price} <span>/ bandeja (8 unidades)</span></div>
+                            <button class="add-to-cart" onclick="addToCart(${product.id})">
+                                <i class="fas fa-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Category Filter
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderProducts(btn.dataset.category);
+            });
+        });
+
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            
+            updateCart();
+            openCart();
+        }
+
+        // Update Cart
+        function updateCart() {
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; opacity: 0.7;">Tu carrito está vacío</p>';
+                cartTotal.textContent = '$0';
+                return;
+            }
+            
+            cartItems.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-image ${item.category}">
+                        <img src="empanadas.jpg" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">$${item.price}</div>
+                        <div class="cart-item-quantity">
+                            <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `$${total}`;
+        }
+
+        // Update Quantity
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+                updateCart();
+            }
+        }
+
+        // Cart Sidebar
+        function openCart() {
+            cartSidebar.classList.add('open');
+            cartOverlay.classList.add('open');
+        }
+
+        function closeCart() {
+            cartSidebar.classList.remove('open');
+            cartOverlay.classList.remove('open');
+            // Resetear formulario
+            const customerForm = document.getElementById('customerForm');
+            customerForm.style.display = 'none';
+            checkoutBtn.textContent = 'Finalizar Pedido';
+            checkoutBtn.disabled = false;
+        }
+
+        cartBtn.addEventListener('click', openCart);
+        cartClose.addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+
+        // Checkout con Mercado Pago - Sin backend
+        checkoutBtn.addEventListener('click', async () => {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+            
+            // Mostrar formulario si no está visible
+            const customerForm = document.getElementById('customerForm');
+            if (customerForm.style.display === 'none') {
+                customerForm.style.display = 'block';
+                checkoutBtn.textContent = 'Ir a Pagar';
+                return;
+            }
+            
+            // Obtener datos del cliente
+            const customerName = document.getElementById('customerName').value.trim();
+            const customerEmail = document.getElementById('customerEmail').value.trim();
+            
+            if (!customerName || !customerEmail) {
+                alert('Por favor ingresa tu nombre y email');
+                return;
+            }
+            
+            // Validar email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(customerEmail)) {
+                alert('Por favor ingresa un email válido');
+                return;
+            }
+            
+            // Calcular total y cantidad de bandejas
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            // Determinar el link de pago según cantidad
+            let paymentUrl;
+            if (USE_CUSTOM_AMOUNT) {
+                // Si tienes link con monto personalizado
+                paymentUrl = SINGLE_PAYMENT_LINK;
+            } else {
+                // Usar link según cantidad
+                paymentUrl = PAYMENT_LINKS[itemCount] || PAYMENT_LINKS['default'];
+            }
+            
+            // Mostrar resumen y confirmar
+            const confirmMessage = `Total: ${total}\n\nBandejas: ${itemCount} (8 unidades c/u)\n\nVas a ser redirigido a Mercado Pago para completar el pago. Confirma para continuar.`;
+            
+            if (confirm(confirmMessage)) {
+                // Redireccionar a Mercado Pago
+                window.location.href = paymentUrl;
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        const navOverlay = document.getElementById('navOverlay');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            navOverlay.classList.toggle('open');
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            navOverlay.classList.remove('open');
+        });
+
+        // Close nav when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navOverlay.classList.remove('open');
+            });
+        });
+
+        // Handle payment return from Mercado Pago
+        function handlePaymentReturn() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            
+            if (status === 'success') {
+                alert('¡Pago exitoso! Gracias por tu compra. Te enviaremos un email de confirmación.');
+                cart = [];
+                updateCart();
+                // Limpiar URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            } else if (status === 'failure') {
+                alert('El pago no fue completado. Por favor intenta nuevamente.');
+                window.history.replaceState({}, document.title, window.location.pathname);
+            } else if (status === 'pending') {
+                alert('El pago está siendo procesado. Te notificaremos cuando se confirme.');
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+
+        // Initialize
+        renderProducts();
+        handlePaymentReturn();
+    </script>
+</body>
+</html>
