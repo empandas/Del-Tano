@@ -1,4 +1,4 @@
-// Configuración de Links de Pago de Mercado Pago
+// Configuración de Pago y WhatsApp
 // Configura aquí tus links de pago según la cantidad de bandejas
 
 const PAYMENT_LINKS = {
@@ -13,7 +13,10 @@ const PAYMENT_LINKS = {
     default: 'https://mpago.la/1UAopHF' // Si supera 8, usa este
 };
 
-// También puedes usar un solo link si tienes configured la opción de "Monto personalizado" en Mercado Pago
+// Número de WhatsApp para pedidos en efectivo (sin + ni guiones)
+const WHATSAPP_NUMBER = '59898952492'; // Reemplaza con tu número
+
+// También puedes usar un solo link si tienes configurada la opción de "Monto personalizado" en Mercado Pago
 const USE_CUSTOM_AMOUNT = false; // Cambia a true si usas link con monto personalizado
 const SINGLE_PAYMENT_LINK = 'https://mpago.la/1UAopHF';
 

@@ -201,11 +201,36 @@
         
         <!-- Formulario de datos del cliente -->
         <div id="customerForm" class="customer-form" style="display: none;">
-            <h4>Datos para el envío</h4>
-            <input type="text" id="customerName" placeholder="Tu nombre completo" required>
-            <input type="email" id="customerEmail" placeholder="Tu email" required>
-            <input type="tel" id="customerPhone" placeholder="Tu teléfono (opcional)">
-            <input type="text" id="customerAddress" placeholder="Dirección de entrega (opcional)">
+            <h4>📝 Datos del Pedido</h4>
+            
+            <!-- Datos personales -->
+            <input type="text" id="customerName" placeholder="Nombre completo *" required>
+            <input type="tel" id="customerPhone" placeholder="Teléfono *" required>
+            <input type="email" id="customerEmail" placeholder="Email *" required>
+            
+            <!-- Dirección de entrega -->
+            <input type="text" id="customerAddress" placeholder="Dirección de entrega * (calle y número)">
+            <input type="text" id="customerNote" placeholder="Referencia (opcional - ej: entre calles, color de casa)">
+            
+            <!-- Fecha de entrega -->
+            <input type="date" id="deliveryDate" min="">
+            
+            <!-- Método de pago -->
+            <div class="payment-options">
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="mp" checked>
+                    <span class="payment-icon">💳</span>
+                    <span>Mercado Pago</span>
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="cash">
+                    <span class="payment-icon">💵</span>
+                    <span>Efectivo en entrega</span>
+                </label>
+            </div>
+            
+            <!-- Resumen del pedido -->
+            <div id="orderSummary" class="order-summary"></div>
         </div>
         
         <button class="checkout-btn" id="checkoutBtn">Finalizar Pedido</button>
@@ -652,7 +677,7 @@
         cartClose.addEventListener('click', closeCart);
         cartOverlay.addEventListener('click', closeCart);
 
-        // Checkout con Mercado Pago - Sin backend
+        // Checkout con Mercado Pago - Mejorado
         checkoutBtn.addEventListener('click', async () => {
             if (cart.length === 0) {
                 alert('Tu carrito está vacío');
@@ -663,48 +688,132 @@
             const customerForm = document.getElementById('customerForm');
             if (customerForm.style.display === 'none') {
                 customerForm.style.display = 'block';
-                checkoutBtn.textContent = 'Ir a Pagar';
+                updateOrderSummary();
+                // Configurar fecha mínima (hoy)
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('deliveryDate').min = today;
+                document.getElementById('deliveryDate').value = today;
+                checkoutBtn.textContent = 'Continuar al Pago';
                 return;
             }
             
             // Obtener datos del cliente
             const customerName = document.getElementById('customerName').value.trim();
+            const customerPhone = document.getElementById('customerPhone').value.trim();
             const customerEmail = document.getElementById('customerEmail').value.trim();
+            const customerAddress = document.getElementById('customerAddress').value.trim();
+            const customerNote = document.getElementById('customerNote').value.trim();
+            const deliveryDate = document.getElementById('deliveryDate').value;
+            const paymentMethod = document.querySelector('input[name="payment"]:checked');
+            const paymentType = paymentMethod ? paymentMethod.value : 'mp';
             
-            if (!customerName || !customerEmail) {
-                alert('Por favor ingresa tu nombre y email');
+            // Validaciones
+            if (!customerName || !customerPhone || !customerEmail) {
+                alert('Por favor completa todos los campos obligatorios (*)');
                 return;
             }
             
-            // Validar email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(customerEmail)) {
                 alert('Por favor ingresa un email válido');
                 return;
             }
             
-            // Calcular total y cantidad de bandejas
+            if (!customerAddress) {
+                alert('Por favor ingresa tu dirección de entrega');
+                return;
+            }
+            
+            // Calcular total y cantidad
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalUnidades = itemCount * 8;
             
-            // Determinar el link de pago según cantidad
-            let paymentUrl;
-            if (USE_CUSTOM_AMOUNT) {
-                // Si tienes link con monto personalizado
-                paymentUrl = SINGLE_PAYMENT_LINK;
-            } else {
-                // Usar link según cantidad
-                paymentUrl = PAYMENT_LINKS[itemCount] || PAYMENT_LINKS['default'];
+            // Mostrar resumen del pedido detallado
+            let pedidoDetalle = '🛒 RESUMEN DEL PEDIDO\n\n';
+            pedidoDetalle += '━━━━━━━━━━━━━━━━━━━━━━━━\n';
+            cart.forEach(item => {
+                pedidoDetalle += `• ${item.name}\n`;
+                pedidoDetalle += `  ${item.quantity} bandeja(s) = ${item.price * item.quantity}\n\n`;
+            });
+            pedidoDetalle += '━━━━━━━━━━━━━━━━━━━━━━━━\n';
+            pedidoDetalle += `📦 Total: ${itemCount} bandeja(s) (${totalUnidades} empanadas)\n`;
+            pedidoDetalle += `💰 TOTAL A PAGAR: ${total}\n\n`;
+            pedidoDetalle += '📋 DATOS DEL CLIENTE\n';
+            pedidoDetalle += '━━━━━━━━━━━━━━━━━━━━━━━━\n';
+            pedidoDetalle += `👤 ${customerName}\n`;
+            pedidoDetalle += `📧 ${customerEmail}\n`;
+            pedidoDetalle += `📱 ${customerPhone}\n\n`;
+            
+            pedidoDetalle += '🚚 MÉTODO DE ENTREGA: Delivery\n';
+            pedidoDetalle += `📍 ${customerAddress}\n`;
+            if (customerNote) pedidoDetalle += `📝 Nota: ${customerNote}\n`;
+            
+            if (deliveryDate) {
+                const fecha = new Date(deliveryDate);
+                pedidoDetalle += '📅 Fecha de entrega: ' + fecha.toLocaleDateString('es-UY') + '\n';
             }
             
-            // Mostrar resumen y confirmar
-            const confirmMessage = `Total: ${total}\n\nBandejas: ${itemCount} (8 unidades c/u)\n\nVas a ser redirigido a Mercado Pago para completar el pago. Confirma para continuar.`;
+            // Agregar método de pago
+            if (paymentType === 'cash') {
+                pedidoDetalle += `💵 PAGO: Efectivo en entrega\n`;
+            } else {
+                pedidoDetalle += `💳 PAGO: Mercado Pago\n`;
+            }
             
-            if (confirm(confirmMessage)) {
-                // Redireccionar a Mercado Pago
-                window.location.href = paymentUrl;
+            pedidoDetalle += '\n¿Confirmar el pedido?';
+            
+            if (confirm(pedidoDetalle)) {
+                if (paymentType === 'cash') {
+                    // Enviar pedido por WhatsApp
+                    const whatsappMessage = encodeURIComponent(pedidoDetalle);
+                    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
+                    window.open(whatsappUrl, '_blank');
+                    alert('¡Pedido enviado por WhatsApp! Te contactaremos pronto para confirmar.');
+                    cart = [];
+                    updateCart();
+                    closeCart();
+                } else {
+                    // Enviar pedido por WhatsApp al vendedor
+                    const whatsappMessage = encodeURIComponent(pedidoDetalle);
+                    const whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + whatsappMessage;
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Ir a Mercado Pago
+                    let paymentUrl;
+                    if (USE_CUSTOM_AMOUNT) {
+                        paymentUrl = SINGLE_PAYMENT_LINK;
+                    } else {
+                        paymentUrl = PAYMENT_LINKS[itemCount] || PAYMENT_LINKS['default'];
+                    }
+                    window.location.href = paymentUrl;
+                }
             }
         });
+        
+        // Actualizar resumen del pedido en el formulario
+        function updateOrderSummary() {
+            const orderSummary = document.getElementById('orderSummary');
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalUnidades = itemCount * 8;
+            
+            let summaryHTML = '<div class="summary-title">Resumen del pedido:</div>';
+            cart.forEach(item => {
+                summaryHTML += `<div class="summary-item">
+                    <span>${item.name} x${item.quantity}</span>
+                    <span>${item.price * item.quantity}</span>
+                </div>`;
+            });
+            summaryHTML += `<div class="summary-total">
+                <span>Total (${itemCount} bandeja(s) - ${totalUnidades} empanadas)</span>
+                <span>${total}</span>
+            </div>`;
+            
+            orderSummary.innerHTML = summaryHTML;
+        }
+        
+
 
         // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
