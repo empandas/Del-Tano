@@ -3,8 +3,8 @@
 
 const PAYMENT_LINKS = {
     1: 'https://mpago.la/1UAopHF',  // 1 bandeja - REEMPLAZA CON TU LINK
-    2: 'https://mpago.la/2bandejas', // 2 bandejas - REEMPLAZA CON TU LINK
-    3: 'https://mpago.la/3bandejas', // 3 bandejas - REEMPLAZA CON TU LINK
+    2: 'https://mpago.la/2nAYAfq', // 2 bandejas - REEMPLAZA CON TU LINK
+    3: 'https://mpago.la/11QbVHk', // 3 bandejas - REEMPLAZA CON TU LINK
     4: 'https://mpago.la/4bandejas', // 4 bandejas - REEMPLAZA CON TU LINK
     5: 'https://mpago.la/5bandejas', // 5 bandejas - REEMPLAZA CON TU LINK
     6: 'https://mpago.la/6bandejas', // 6 bandejas - REEMPLAZA CON TU LINK

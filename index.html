@@ -111,7 +111,7 @@
     <!-- Features -->
     <section class="features" id="nosotros">
         <h2 class="section-title">¿Por Qué Elegirnos?</h2>
-        <p class="section-subtitle">Calidad y sabor en cada bocado</p>
+        <p class="section-subtitle">Sabor auténtico, listo cuando vos quieras.</p>
         
         <div class="features-grid">
             <div class="feature-card">
@@ -119,28 +119,28 @@
                     <i class="fas fa-leaf"></i>
                 </div>
                 <h3>Ingredientes Frescos</h3>
-                <p>Utilizamos solo ingredientes frescos y de la mejor calidad para garantizar el sabor auténtico.</p>
+                <p>Seleccionamos productos de primera calidad para que cada empanada conserve su sabor casero.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-hands"></i>
                 </div>
                 <h3>Artesanales</h3>
-                <p>Cada empanada es elaborada a mano con recetas tradicionales transmitidas por generaciones.</p>
+                <p>Recetas tradicionales, hechas a mano y congeladas al instante para mantener su frescura.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-truck"></i>
                 </div>
-                <h3>Entrega Rápida</h3>
-                <p>Recibe tus empanadas frescas y calientes en la puerta de tu casa en tiempo récord.</p>
+                <h3>Entrega Dinámica</h3>
+                <p>Recibí tus empanadas congeladas en tiempo récord, listas para hornear y disfrutar sin esperas.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-heart"></i>
                 </div>
-                <h3>Hechas con Amor</h3>
-                <p>Ponemos el mismo cuidado y dedicación en cada empanada como si fuera para nuestra familia.</p>
+                <h3>Ricas y Prácticas</h3>
+                <p>El mismo amor y dedicación, ahora con la comodidad de tenerlas siempre a mano en tu freezer.</p>
             </div>
         </div>
     </section>
@@ -161,7 +161,7 @@
                 <h4>Enlaces Rápidos</h4>
                 <a href="#inicio">Inicio</a>
                 <a href="#catalogo">Catálogo</a>
-                otros">Nosotros<a href="#nos</a>
+                <a href="#nosotros">Nosotros</a>
                 <a href="#contacto">Contacto</a>
             </div>
             <div class="footer-section">
@@ -173,7 +173,18 @@
                 <h4>Contacto</h4>
                 <p><i class="fas fa-phone"></i> +598 91 234 567</p>
                 <p><i class="fas fa-map-marker-alt"></i> Ciudad de la Costa, Uruguay</p>
-                <p><i class="fas fa-envelope"></i> hola@eltano.com.uy</p>
+                <p><i class="fas fa-envelope"></i> empandascongeladas1@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Zona de Reparto</h4>
+                <p><i class="fas fa-truck"></i> Ciudad de la Costa y alrededores</p>
+                <p style="font-size: 0.85rem; opacity: 0.8;">Consultá por otras zonas</p>
+            </div>
+            <div class="footer-section">
+                <h4>Métodos de Pago</h4>
+                <p><i class="fas fa-money-bill-wave"></i> Efectivo</p>
+                <p><i class="fas fa-university"></i> Transferencia</p>
+                <p><i class="fab fa-cc-mastercard"></i> Mercado Pago</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -199,9 +210,9 @@
             <span id="cartTotal">$0</span>
         </div>
         
-        <!-- Formulario de datos del cliente -->
+        <!-- customerForm placeholder --> 
         <div id="customerForm" class="customer-form" style="display: none;">
-            <h4>📝 Datos del Pedido</h4>
+            <h4><i class="fas fa-user-circle"></i> Datos del Pedido</h4>
             
             <!-- Datos personales -->
             <input type="text" id="customerName" placeholder="Nombre completo *" required>
@@ -216,6 +227,7 @@
             <input type="date" id="deliveryDate" min="">
             
             <!-- Método de pago -->
+            <h4 style="margin-top: 1rem;"><i class="fas fa-credit-card"></i> Método de Pago</h4>
             <div class="payment-options">
                 <label class="payment-option">
                     <input type="radio" name="payment" value="mp" checked>
@@ -225,7 +237,7 @@
                 <label class="payment-option">
                     <input type="radio" name="payment" value="cash">
                     <span class="payment-icon">💵</span>
-                    <span>Efectivo en entrega</span>
+                    <span>Efectivo</span>
                 </label>
             </div>
             
@@ -401,7 +413,7 @@
                 name: "Integral de Vegetales Asados",
                 category: "integral",
                 description: "Vegetales de estación asados, ricota y muzzarella.",
-                price: 450,
+                price: 420,
                 icon: "fa-leaf"
             },
             {
@@ -409,7 +421,7 @@
                 name: "Integral Caprese",
                 category: "integral",
                 description: "Mix de quesos, tomate y albahaca frescos.",
-                price: 450,
+                price: 420,
                 icon: "fa-leaf"
             },
             // EMPANADAS VEGANAS
@@ -460,7 +472,7 @@
                 name: "Celíacos - Carne",
                 category: "sin_gluten",
                 description: "SIN GLUTEN. Pack 2 empanadas de carne. Horneadas y congeladas.",
-                price: 500,
+                price: 420,
                 icon: "fa-ban"
             },
             {
@@ -468,7 +480,7 @@
                 name: "Celíacos - Jamón y Queso",
                 category: "sin_gluten",
                 description: "SIN GLUTEN. Pack 2 empanadas. Horneadas y congeladas.",
-                price: 500,
+                price: 420,
                 icon: "fa-ban"
             },
             // EMPANADAS PREMIUM
@@ -477,7 +489,7 @@
                 name: "Empanada de Chivito",
                 category: "premium",
                 description: "Carne al cuchillo, muzza, mayo, huevo, panceta, cebolla, aceitunas y morrón.",
-                price: 500,
+                price: 420,
                 icon: "fa-star"
             },
             {
@@ -485,7 +497,7 @@
                 name: "Roquefort",
                 category: "premium",
                 description: "Queso roquefort, muzzarella, apio y nuez.",
-                price: 500,
+                price: 420,
                 icon: "fa-star"
             },
             {
@@ -493,7 +505,7 @@
                 name: "Caprese",
                 category: "premium",
                 description: "Mix de quesos, tomate y albahaca frescos.",
-                price: 500,
+                price: 420,
                 icon: "fa-star"
             },
             {
@@ -501,7 +513,7 @@
                 name: "Atún",
                 category: "premium",
                 description: "Atún, cebolla, huevo, aceitunas y salsa.",
-                price: 500,
+                price: 420,
                 icon: "fa-fish"
             },
             // EMPANADAS DULCES
@@ -510,7 +522,7 @@
                 name: "Dulce de Leche",
                 category: "dulce",
                 description: "Dulce de leche con betas de chocolate amargo.",
-                price: 400,
+                price: 420,
                 icon: "fa-birthday-cake"
             },
             {
@@ -518,7 +530,7 @@
                 name: "Martin Fierro",
                 category: "dulce",
                 description: "Queso dambo y dulce de membrillo.",
-                price: 400,
+                price: 420,
                 icon: "fa-birthday-cake"
             },
             {
@@ -526,7 +538,7 @@
                 name: "Manzana con Pasas",
                 category: "dulce",
                 description: "Manzana con pasas de uva y canela.",
-                price: 400,
+                price: 420,
                 icon: "fa-birthday-cake"
             }
         ];
@@ -619,19 +631,28 @@
             cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
             
             if (cart.length === 0) {
-                cartItems.innerHTML = '<p style="text-align: center; opacity: 0.7;">Tu carrito está vacío</p>';
+                cartItems.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-basket"></i>
+                        <p>Tu carrito está vacío</p>
+                        <span>Agregá empanadas para hacer tu pedido</span>
+                    </div>
+                `;
                 cartTotal.textContent = '$0';
                 return;
             }
             
             cartItems.innerHTML = cart.map(item => `
                 <div class="cart-item">
+                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})" title="Eliminar">
+                        <i class="fas fa-times"></i>
+                    </button>
                     <div class="cart-item-image ${item.category}">
                         <img src="empanadas.jpg" alt="${item.name}">
                     </div>
                     <div class="cart-item-details">
                         <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">$${item.price}</div>
+                        <div class="cart-item-price">${item.price}</div>
                         <div class="cart-item-quantity">
                             <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
                             <span>${item.quantity}</span>
@@ -655,6 +676,12 @@
                 }
                 updateCart();
             }
+        }
+
+        // Remove from Cart
+        function removeFromCart(productId) {
+            cart = cart.filter(i => i.id !== productId);
+            updateCart();
         }
 
         // Cart Sidebar
@@ -764,6 +791,20 @@
             pedidoDetalle += '\n¿Confirmar el pedido?';
             
             if (confirm(pedidoDetalle)) {
+                // Si son 4 o más bandejas, solo WhatsApp (no hay link de pago configurado)
+                if (itemCount >= 4) {
+                    // Enviar pedido por WhatsApp para consultar
+                    pedidoDetalle += '\n\n⚠️ IMPORTANTE: Este pedido requiere confirmación de stock y precio final antes de proceder al pago.';
+                    const whatsappMessage = encodeURIComponent(pedidoDetalle);
+                    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
+                    window.open(whatsappUrl, '_blank');
+                    alert('¡Te redirigimos a WhatsApp! Un vendedor te confirmará la disponibilidad y el precio final para este cantidad de bandejas.');
+                    cart = [];
+                    updateCart();
+                    closeCart();
+                    return;
+                }
+                
                 if (paymentType === 'cash') {
                     // Enviar pedido por WhatsApp
                     const whatsappMessage = encodeURIComponent(pedidoDetalle);
@@ -798,7 +839,7 @@
             const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
             const totalUnidades = itemCount * 8;
             
-            let summaryHTML = '<div class="summary-title">Resumen del pedido:</div>';
+            let summaryHTML = '<div class="summary-title"><i class="fas fa-shopping-basket"></i> Resumen del pedido:</div>';
             cart.forEach(item => {
                 summaryHTML += `<div class="summary-item">
                     <span>${item.name} x${item.quantity}</span>
